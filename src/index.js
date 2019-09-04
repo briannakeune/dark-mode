@@ -7,10 +7,13 @@ import Navbar from "./components/Navbar";
 
 import "./styles.scss";
 
-import useLocalStorage from './hooks/useLocalStorage.js';
 const App = () => {
   const [coinData, setCoinData] = useState([]);
-  const [v, setV] = useLocalStorage("hello");
+
+  let darkMode = document.querySelector.className("dark-mode__toggle");
+  console.log(darkMode)
+
+
 
   useEffect(() => {
     axios
@@ -22,6 +25,7 @@ const App = () => {
   }, []);
   return (
     <div className="App">
+      
       <Navbar />
       <Charts coinData={coinData} />
     </div>
