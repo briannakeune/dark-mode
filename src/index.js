@@ -10,11 +10,6 @@ import "./styles.scss";
 const App = () => {
   const [coinData, setCoinData] = useState([]);
 
-  let darkMode = document.querySelector.className("dark-mode__toggle");
-  console.log(darkMode)
-
-
-
   useEffect(() => {
     axios
       .get(
