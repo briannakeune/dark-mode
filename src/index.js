@@ -7,8 +7,10 @@ import Navbar from "./components/Navbar";
 
 import "./styles.scss";
 
+import useLocalStorage from './hooks/useLocalStorage.js';
 const App = () => {
   const [coinData, setCoinData] = useState([]);
+  const [v, setV] = useLocalStorage("hello");
 
   useEffect(() => {
     axios
