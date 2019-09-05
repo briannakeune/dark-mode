@@ -2,10 +2,14 @@ import React from "react";
 import Chart from "./Chart";
 
 const Charts = ({ coinData }) => {
+  const routeToCoin = (e, coin) => {
+    e.preventDefault();
+    coinData.history.push(`/${coin.id}`);
+  };
   return (
     <div className="charts">
       {coinData.map(coin => (
-        <div className="chart__container" key={coin.name}>
+        <div className="chart__container" key={coin.id} onClick={e => routeToCoin(e, coin)}>
           <h2 className="coin__title">{coin.name}</h2>
           <h4 className="coin__symbol">{coin.symbol}</h4>
           <div className="coin__logo">

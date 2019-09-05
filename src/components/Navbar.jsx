@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-import { useDarkMode } from '../hooks/useDarkMode.js';
+import { useDarkMode } from "../hooks/useDarkMode.js";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useDarkMode(false);
@@ -11,11 +12,20 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <h1>Crypto Tracker</h1>
-      <div className="dark-mode__toggle">
-        <div
-          onClick={toggleMode}
-          className={darkMode ? 'toggle toggled' : 'toggle'}
-        />
+      <div className="nav">
+        <NavLink exact to="/">
+          Home
+        </NavLink>
+        <NavLink to="/about">About</NavLink>
+      </div>
+      <div>
+        <span>Dark Mode</span>
+        <div className="dark-mode__toggle">
+          <div
+            onClick={toggleMode}
+            className={darkMode ? "toggle toggled" : "toggle"}
+          />
+        </div>
       </div>
     </nav>
   );
